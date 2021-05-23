@@ -1,7 +1,22 @@
 .container {
-    background-color: green;
-    height: 5rem;
-    max-width: 80%;
-    margin: 2rem;
+
+    margin: 10%;
+    width: 80%;
+    height: auto;
     padding: 1rem;
+    border-radius: 25px;
+}
+
+.imagee {
+    content: url('1-mercedes-amg-gt63-fourdoor-coupe-2019-uk-fd-hero-front.png');
+    opacity: 1;
+    width: 100%;
+    place-items: center;
+    align-self: center;
+}
+.mainDiv {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    place-items: center;
 }

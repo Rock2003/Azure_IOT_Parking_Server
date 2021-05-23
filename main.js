@@ -1,3 +1,5 @@
+const app = require('express')();
+
 const fs = require('fs');
 const fileName = './file.json';
 const file = require(fileName);
@@ -107,4 +109,30 @@ async function main() {
 
 }
 
-main().then(() => console.log('Done')).catch((ex) => console.log(ex.message));
+
+app.get('/', (req, res) => {
+    try{
+        main();
+    } catch(err) {
+        console.log(err);
+    }
+    res.sendFile('C:/Users/Youssef/Desktop/Azureeeeeeeeeeee/Azure_IOT_Parking_Server/index.html');
+});
+
+app.get('/index.js',  (req, res) => {
+    res.sendFile('C:/Users/Youssef/Desktop/Azureeeeeeeeeeee/Azure_IOT_Parking_Server/index.js');
+});
+
+app.get('/style.css',  (req, res) => {
+    res.sendFile('C:/Users/Youssef/Desktop/Azureeeeeeeeeeee/Azure_IOT_Parking_Server/style.css');
+});
+app.get('/file.json',  (req, res) => {
+    res.sendFile('C:/Users/Youssef/Desktop/Azureeeeeeeeeeee/Azure_IOT_Parking_Server/file.json');
+});
+app.get('/1-mercedes-amg-gt63-fourdoor-coupe-2019-uk-fd-hero-front.png',  (req, res) => {
+    res.sendFile('C:/Users/Youssef/Desktop/Azureeeeeeeeeeee/Azure_IOT_Parking_Server/1-mercedes-amg-gt63-fourdoor-coupe-2019-uk-fd-hero-front.png');
+});
+
+
+app.listen(3000, () => console.log("Listening on port 3000..."));
+// main().then(() => console.log('Done')).catch((ex) => console.log(ex.message));
