@@ -1,4 +1,5 @@
 const app = require('express')();
+const path = require('path');
 
 const fs = require('fs');
 const fileName = './file.json';
@@ -113,7 +114,7 @@ async function main() {
 app.get('/', (req, res) => {
     try{
         main().then( () => 
-        res.sendFile('C:/Users/Youssef/Desktop/Azureeeeeeeeeeee/Azure_IOT_Parking_Server/index.html')
+        res.sendFile(path.join(__dirname, '/index.html'))
         );
     } catch(err) {
         console.log(err);
@@ -122,17 +123,17 @@ app.get('/', (req, res) => {
 });
 
 app.get('/index.js',  (req, res) => {
-    res.sendFile('C:/Users/Youssef/Desktop/Azureeeeeeeeeeee/Azure_IOT_Parking_Server/index.js');
+    res.sendFile(path.join(__dirname, '/index.js'));
 });
 
 app.get('/style.css',  (req, res) => {
-    res.sendFile('C:/Users/Youssef/Desktop/Azureeeeeeeeeeee/Azure_IOT_Parking_Server/style.css');
+    res.sendFile(path.join(__dirname, '/style.css'));
 });
 app.get('/file.json',  (req, res) => {
-    res.sendFile('C:/Users/Youssef/Desktop/Azureeeeeeeeeeee/Azure_IOT_Parking_Server/file.json');
+    res.sendFile(path.join(__dirname, '/file.json'));
 });
 app.get('/1-mercedes-amg-gt63-fourdoor-coupe-2019-uk-fd-hero-front.png',  (req, res) => {
-    res.sendFile('C:/Users/Youssef/Desktop/Azureeeeeeeeeeee/Azure_IOT_Parking_Server/1-mercedes-amg-gt63-fourdoor-coupe-2019-uk-fd-hero-front.png');
+    res.sendFile(path.join(__dirname, '/1-mercedes-amg-gt63-fourdoor-coupe-2019-uk-fd-hero-front.png'));
 });
 
 
