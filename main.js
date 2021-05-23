@@ -112,11 +112,13 @@ async function main() {
 
 app.get('/', (req, res) => {
     try{
-        main();
+        main().then( () => 
+        res.sendFile('C:/Users/Youssef/Desktop/Azureeeeeeeeeeee/Azure_IOT_Parking_Server/index.html')
+        );
     } catch(err) {
         console.log(err);
     }
-    res.sendFile('C:/Users/Youssef/Desktop/Azureeeeeeeeeeee/Azure_IOT_Parking_Server/index.html');
+    // res.sendFile('C:/Users/Youssef/Desktop/Azureeeeeeeeeeee/Azure_IOT_Parking_Server/index.html');
 });
 
 app.get('/index.js',  (req, res) => {
